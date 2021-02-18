@@ -14,9 +14,30 @@ namespace Business.Concrete
         {
             _iKolorDal = ikolorDal;
         }
+
+        public void Add(Kolor kolor)
+        {
+            _iKolorDal.Add(kolor);
+        }
+
+        public void Delete(Kolor kolor)
+        {
+            _iKolorDal.Delete(kolor);
+        }
+
+        public Kolor GetById(int kolorId)
+        {
+            return _iKolorDal.Get(k=>k.KolorId==kolorId);
+        }
+
         public List<Kolor> GetCarsByKolorId(int kolorId)
         {
             return _iKolorDal.GetAll(k => k.KolorId == kolorId);
+        }
+
+        public void Update(Kolor kolor)
+        {
+            _iKolorDal.Update(kolor);
         }
     }
 }
