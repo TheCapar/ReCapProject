@@ -36,12 +36,12 @@ namespace Business.Concrete
 
         public Car GetById(int CarId)
         {
-            return _carDal.GetById(c => c.CarId == CarId);
+            return _carDal.Get(c => c.CarId == CarId);
         }
 
         public List<CarDetailDto> GetCarDetails()
         {
-            return _carDal.
+            return _carDal.GetCarDetails();
         }
 
         public void Upgrade(Car car)

@@ -14,6 +14,7 @@ namespace Business.Abstract
         void Delete(Car car);
         void Upgrade(Car car);
         List<CarDetailDto> GetCarDetails();
-       
+
+
     }
 }
