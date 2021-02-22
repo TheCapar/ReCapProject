@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
@@ -15,14 +16,16 @@ namespace Business.Concrete
             _iKolorDal = ikolorDal;
         }
 
-        public void Add(Kolor kolor)
+        public IResult Add(Kolor kolor)
         {
             _iKolorDal.Add(kolor);
+            return new SuccessResult("Başarıyla Eklendi");
         }
 
-        public void Delete(Kolor kolor)
+        public IResult Delete(Kolor kolor)
         {
             _iKolorDal.Delete(kolor);
+            return new SuccessResult("Başarıyla Silindi");
         }
 
         public Kolor GetById(int kolorId)
@@ -35,9 +38,10 @@ namespace Business.Concrete
             return _iKolorDal.GetAll(k => k.KolorId == kolorId);
         }
 
-        public void Update(Kolor kolor)
+        public IResult Update(Kolor kolor)
         {
             _iKolorDal.Update(kolor);
+            return new SuccessResult("Başarıyla Güncellendi");
         }
     }
 }
