@@ -22,9 +22,9 @@ namespace Business.Concrete
         {
             if(car.DailyPrice>=0 && car.Description.Length>=2) {
                 _carDal.Add(car);
-                return new ErrorResult(Messages.UrunEklenmedi);
+                return new ErrorResult(Messages.ArabaEklenmedi);
             }
-            return new SuccessResult(Messages.UrunEklendi);
+            return new SuccessResult(Messages.ArabaEklendi);
         }
 
         public IResult Delete(Car car)
@@ -33,19 +33,19 @@ namespace Business.Concrete
             return new SuccessResult("Başarıyla Silindi");
         }
 
-        public List<Car> GetAll()
+        public IDataResult<List<Car>> GetAll()
         {
-            return _carDal.GetAll();
+            return new DataResult<List<Car>>(_carDal.GetAll(),true,"Başarıyla Listelendi");
         }
 
-        public Car GetById(int CarId)
+        public IDataResult<Car> GetById(int carId)
         {
-            return _carDal.Get(c => c.CarId == CarId);
+            return new DataResult<Car>(_carDal.Get(c => c.CarId == carId),true,"Başarıyla Listelendi");
         }
 
-        public List<CarDetailDto> GetCarDetails()
+        public IDataResult<List<CarDetailDto>> GetCarDetails()
         {
-            return _carDal.GetCarDetails();
+            return new DataResult<List<CarDetailDto>>(_carDal.GetCarDetails(),true,"Başarıyla Listelendi");
         }
 
         public IResult Upgrade(Car car)
