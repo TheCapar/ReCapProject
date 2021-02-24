@@ -42,7 +42,7 @@ namespace Business.Concrete
             return new DataResult<Rental>(_rentaldal.Get(r=>r.RentalId == rentalId),true,"Seçilen Kirlama Gösteriliyor");
         }
 
-        public IResult Upgrade(Rental rental)
+        public IResult Update(Rental rental)
         {
             return new Result(true, Messages.RentalEklendi); 
         }

@@ -36,7 +36,7 @@ namespace Business.Concrete
             return new DataResult<Customer>(_customerDal.Get(c => c.CustomerId == customerId), true, "İstediğiniz Müşteri Bilgileri Geldi");
         }
 
-        public IResult Upgrade(Customer customer)
+        public IResult Update(Customer customer)
         {
             return new Result(true,"Müşteri Bilgileri Başarıyla Yenilendi");
         }

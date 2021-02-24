@@ -36,7 +36,7 @@ namespace Business.Concrete
             return new DataResult<User>(_userDal.Get(u=>u.UserId == userId),true,"Başarıyla Kullanıcı Listelendi");
         }
 
-        public IResult Upgrade(User user)
+        public IResult Update(User user)
         {
             return new SuccessResult(Messages.KullanıcıEklendi);
         }

@@ -48,7 +48,7 @@ namespace Business.Concrete
             return new DataResult<List<CarDetailDto>>(_carDal.GetCarDetails(),true,"Başarıyla Listelendi");
         }
 
-        public IResult Upgrade(Car car)
+        public IResult Update(Car car)
         {
             _carDal.Update(car);
             return new SuccessResult("Başarıyla Güncellendi");
