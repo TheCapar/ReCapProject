@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Business.Constants;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
@@ -28,16 +29,14 @@ namespace Business.Concrete
             return new SuccessResult("Başarıyla Silindi");
         }
 
-        public Brand GetById(int brandId)
+        public IDataResult<Brand> GetById(int brandId)
         {
-            return _iBrandDal.Get(b => b.BrandId == brandId);
+            return new SuccessDataResult<Brand>(_iBrandDal.Get(b => b.BrandId == brandId));
         }
-
-        public List<Brand> GetCarsByBrandId(int brandId)
+        public IDataResult<List<Brand>> GetAll()
         {
-            return _iBrandDal.GetAll(b => b.BrandId == brandId);
+            return new SuccessDataResult<List<Brand>>(_iBrandDal.GetAll(), Messages.BrandGetAll);
         }
-
         public IResult Update(Brand brand)
         {
             _iBrandDal.Update(brand);

@@ -11,7 +11,7 @@ namespace Business.Abstract
         IResult Add(Kolor kolor);
         IResult Delete(Kolor kolor);
         IResult Update(Kolor kolor);
-        Kolor GetById(int kolorId);
-        List<Kolor> GetCarsByKolorId(int kolorId);
+        IDataResult<List<Kolor>> GetAll();
+        IDataResult<Kolor> GetById(int kolorId);
     }
 }
