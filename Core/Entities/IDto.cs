@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Core
+namespace Core.Entities
 {
-   public interface IDto
+    public interface IDto
     {
+
     }
 }
