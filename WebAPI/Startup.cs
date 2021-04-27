@@ -52,6 +52,7 @@ namespace WebAPI
                         IssuerSigningKey = SecurityKeyHelper.CreateSecurityKey(tokenOptions.SecurityKey)
                     };
                 });
+            services.AddCors();
             services.AddControllers();
             services.AddDependencyResolvers(new ICoreModule[] { new CoreModule() });
         }
@@ -70,7 +71,7 @@ namespace WebAPI
                 app.UseHsts();
             }
             app.UseHttpsRedirection();
-
+            app.UseCors(builder=>builder.WithOrigins("http://localhost:4200/").AllowAnyHeader());
             app.UseStaticFiles();
 
             app.UseRouting();
