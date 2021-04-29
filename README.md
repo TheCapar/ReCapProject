@@ -1,4 +1,2 @@
 # ReCapProject
-Yapmış olduğum web sitesi olan ReCapProject'in backend kısmıdır. 
-C#,.Net ve MSSQL kullanmış bulunmaktayım.
-Katmanlı mimari içermektedir.
+C# ile backend ini yazdığım araba kiralama otomasyonu projemdir. SOLID prensiplerine uygun kodlanmıştır..
